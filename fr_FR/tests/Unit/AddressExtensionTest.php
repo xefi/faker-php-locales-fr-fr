@@ -1,8 +1,6 @@
 <?php
 
-
 use Xefi\Faker\Container\Container;
-use Xefi\Faker\Faker;
 use Xefi\Faker\FrFr\Tests\Unit\TestCase;
 
 final class AddressExtensionTest extends TestCase

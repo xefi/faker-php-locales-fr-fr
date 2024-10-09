@@ -8,9 +8,10 @@ class Luhn
      * Luhn core algorithm.
      *
      * @param int $number
+     *
      * @return int
      */
-    private static function algorithm(int $number):int
+    private static function algorithm(int $number): int
     {
         $sum = 0;
         $parity = 1;
@@ -28,35 +29,38 @@ class Luhn
      * Compute check digit.
      *
      * @param int $number Number to compute.
+     *
      * @return int
      */
-    public static function checksum(int $number):int
+    public static function checksum(int $number): int
     {
-        return ((self::algorithm($number) * 9) % 10);
+        return (self::algorithm($number) * 9) % 10;
     }
 
     /**
      * Validate number containing check digit.
      *
      * @param int $number Number to validate.
+     *
      * @return bool
      */
-    public static function isValid(int $number):bool
+    public static function isValid(int $number): bool
     {
-        return (self::algorithm($number . '0') % 10) === 0;
+        return (self::algorithm($number.'0') % 10) === 0;
     }
 
     /**
      * Add check digit to number.
      *
-     * @param int $number Number to checksum.
-     * @param bool $soft Do not add check digit if number already validates.
+     * @param int  $number Number to checksum.
+     * @param bool $soft   Do not add check digit if number already validates.
+     *
      * @return int
      */
-    public static function create(int $number, bool $soft = false):int
+    public static function create(int $number, bool $soft = false): int
     {
         return !self::isValid($number) || !$soft
-            ? $number . self::checksum($number)
+            ? $number.self::checksum($number)
             : $number;
     }
 }

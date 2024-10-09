@@ -1,16 +1,14 @@
 <?php
 
-
 namespace Xefi\Faker\FrFr\Tests\Unit;
 
 use Xefi\Faker\Container\Container;
-use Xefi\Faker\Faker;
 use Xefi\Faker\FrFr\Luhn;
-use Xefi\Faker\FrFr\Tests\Unit\TestCase;
 
 final class CompanyExtensionTest extends TestCase
 {
-    public function testSiren() {
+    public function testSiren()
+    {
         $faker = new Container(false);
 
         $results = [];
@@ -24,7 +22,8 @@ final class CompanyExtensionTest extends TestCase
         }
     }
 
-    public function testSiret() {
+    public function testSiret()
+    {
         $faker = new Container(false);
 
         $results = [];

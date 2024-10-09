@@ -6,7 +6,8 @@ use Xefi\Faker\Extensions\Extension;
 
 class FinancialExtension extends Extension
 {
-    public function nir(string $gender = null, bool $formatted = false): string {
+    public function nir(string $gender = null, bool $formatted = false): string
+    {
         // Gender
         if ($gender === 'M') {
             $nir = 1;
@@ -18,7 +19,7 @@ class FinancialExtension extends Extension
 
         $nir .=
             // Year of birth
-            $this->randomizer->getBytesFromString(implode(range(0,9)), 2).
+            $this->randomizer->getBytesFromString(implode(range(0, 9)), 2).
             // Month of birth (mm)
             sprintf('%02d', $this->randomizer->getInt(1, 12));
 
@@ -39,7 +40,7 @@ class FinancialExtension extends Extension
         /**
          * The key for a given NIR is `97 - 97 % NIR`
          * NIR has to be an integer, so we have to do a little replacment
-         * for departments 2A and 2B
+         * for departments 2A and 2B.
          */
         if ($department === '2A') {
             $nirInteger = str_replace('2A', '19', $nir);
@@ -52,7 +53,7 @@ class FinancialExtension extends Extension
 
         // Format is x xx xx xx xxx xxx xx
         if ($formatted) {
-            $nir = substr($nir, 0, 1) . ' ' . substr($nir, 1, 2) . ' ' . substr($nir, 3, 2) . ' ' . substr($nir, 5, 2) . ' ' . substr($nir, 7, 3) . ' ' . substr($nir, 10, 3) . ' ' . substr($nir, 13, 2);
+            $nir = substr($nir, 0, 1).' '.substr($nir, 1, 2).' '.substr($nir, 3, 2).' '.substr($nir, 5, 2).' '.substr($nir, 7, 3).' '.substr($nir, 10, 3).' '.substr($nir, 13, 2);
         }
 
         return $nir;
