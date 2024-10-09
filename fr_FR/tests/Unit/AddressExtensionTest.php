@@ -1,9 +1,9 @@
 <?php
+
 namespace Xefi\Faker\FrFr\Tests\Unit;
 
 use ReflectionClass;
 use Xefi\Faker\Container\Container;
-use Xefi\Faker\FrFr\Tests\Unit\TestCase;
 
 final class AddressExtensionTest extends TestCase
 {

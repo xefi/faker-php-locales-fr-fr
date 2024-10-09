@@ -2,7 +2,6 @@
 
 namespace Xefi\Faker\FrFr\Extensions;
 
-use Xefi\Faker\Extensions\Extension;
 use Xefi\Faker\Extensions\Traits\HasLocale;
 
 class PersonExtension extends \Xefi\Faker\Extensions\PersonExtension

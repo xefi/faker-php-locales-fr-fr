@@ -1,8 +1,8 @@
 <?php
+
 namespace Xefi\Faker\FrFr\Tests\Unit;
 
 use Xefi\Faker\Container\Container;
-use Xefi\Faker\Faker;
 
 class TestCase extends \PHPUnit\Framework\TestCase
 {

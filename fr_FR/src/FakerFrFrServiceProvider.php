@@ -16,7 +16,7 @@ class FakerFrFrServiceProvider extends Provider
             AddressExtension::class,
             CompanyExtension::class,
             FinancialExtension::class,
-            PersonExtension::class
+            PersonExtension::class,
         ]);
     }
 }
