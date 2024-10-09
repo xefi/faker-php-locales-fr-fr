@@ -1,5 +1,4 @@
 <?php
-
 namespace Xefi\Faker\FrFr\Tests\Unit;
 
 use Xefi\Faker\Container\Container;
