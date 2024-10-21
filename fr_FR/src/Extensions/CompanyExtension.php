@@ -2,8 +2,8 @@
 
 namespace Xefi\Faker\FrFr\Extensions;
 
+use Xefi\Faker\Calculators\Luhn;
 use Xefi\Faker\Extensions\Extension;
-use Xefi\Faker\FrFr\Luhn;
 
 class CompanyExtension extends Extension
 {

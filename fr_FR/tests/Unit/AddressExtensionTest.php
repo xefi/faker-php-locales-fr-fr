@@ -21,11 +21,9 @@ final class AddressExtensionTest extends TestCase
 
     public function testRegion(): void
     {
-        $faker = new Container(false);
-
         $results = [];
         for ($i = 0; $i < count($this->regions); $i++) {
-            $results[] = $faker->unique()->region();
+            $results[] = $this->faker->unique()->region();
         }
 
         $this->assertEqualsCanonicalizing(
@@ -36,11 +34,9 @@ final class AddressExtensionTest extends TestCase
 
     public function testDepartment(): void
     {
-        $faker = new Container(false);
-
         $results = [];
         for ($i = 0; $i < count($this->departments); $i++) {
-            $results[] = $faker->unique()->department();
+            $results[] = $this->faker->unique()->department();
         }
 
         $this->assertEquals(

@@ -2,8 +2,8 @@
 
 namespace Xefi\Faker\FrFr\Tests\Unit;
 
+use Xefi\Faker\Calculators\Luhn;
 use Xefi\Faker\Container\Container;
-use Xefi\Faker\FrFr\Luhn;
 
 final class CompanyExtensionTest extends TestCase
 {
