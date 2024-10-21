@@ -2,7 +2,6 @@
 
 namespace Xefi\Faker\FrFr\Extensions;
 
-use Xefi\Faker\Extensions\Extension;
 use Xefi\Faker\Extensions\FinancialExtension as BaseFinancialExtension;
 use Xefi\Faker\Extensions\Traits\HasLocale;
 
@@ -17,7 +16,7 @@ class FinancialExtension extends BaseFinancialExtension
 
     public function iban(string $countryCode = null, string $format = null): string
     {
-        if($countryCode === null) {
+        if ($countryCode === null) {
             $countryCode = 'FR';
         }
 

@@ -3,7 +3,6 @@
 namespace Xefi\Faker\FrFr\Tests\Unit;
 
 use ReflectionClass;
-use Xefi\Faker\Container\Container;
 
 final class AddressExtensionTest extends TestCase
 {

@@ -3,7 +3,6 @@
 namespace Xefi\Faker\FrFr\Tests\Unit;
 
 use Xefi\Faker\Calculators\Iban;
-use Xefi\Faker\Container\Container;
 
 final class FinancialExtensionTest extends TestCase
 {
