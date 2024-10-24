@@ -1,8 +1,6 @@
 <?php
 
-
 use ReflectionClass;
-use Xefi\Faker\Extensions\PersonExtension;
 
 final class ColorsExtensionTest extends \Xefi\Faker\FrFr\Tests\Unit\TestCase
 {

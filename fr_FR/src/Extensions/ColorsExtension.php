@@ -2,8 +2,6 @@
 
 namespace Xefi\Faker\FrFr\Extensions;
 
-use Xefi\Faker\Extensions\Extension;
-use Xefi\Faker\Extensions\Traits\HasLocale;
 use Xefi\Faker\Extensions\ColorsExtension as BaseColorsExtension;
 
 class ColorsExtension extends BaseColorsExtension
@@ -47,6 +45,6 @@ class ColorsExtension extends BaseColorsExtension
         'TerreDeSienne', 'Argent', 'BleuCiel', 'BleuArdoise', 'GrisArdoise',
         'Neige', 'VertPrintemps', 'BleuAcier', 'BrunClair', 'Sarcelle',
         'Chardon', 'Tomate', 'Turquoise', 'Violet', 'Blé',
-        'Blanc', 'BlancFumé', 'Jaune'
+        'Blanc', 'BlancFumé', 'Jaune',
     ];
 }

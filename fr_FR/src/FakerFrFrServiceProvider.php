@@ -18,7 +18,7 @@ class FakerFrFrServiceProvider extends Provider
             CompanyExtension::class,
             FinancialExtension::class,
             PersonExtension::class,
-            ColorsExtension::class
+            ColorsExtension::class,
         ]);
     }
 }

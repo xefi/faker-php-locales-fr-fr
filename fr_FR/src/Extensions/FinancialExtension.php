@@ -3,7 +3,6 @@
 namespace Xefi\Faker\FrFr\Extensions;
 
 use Xefi\Faker\Extensions\FinancialExtension as BaseFinancialExtension;
-use Xefi\Faker\Extensions\Traits\HasLocale;
 
 class FinancialExtension extends BaseFinancialExtension
 {
@@ -19,11 +18,11 @@ class FinancialExtension extends BaseFinancialExtension
         }
 
         if ($format === null) {
-            $format = sprintf('%s%s%s',
-                str_repeat('{d}', 10)  ,
+            $format = sprintf(
+                '%s%s%s',
+                str_repeat('{d}', 10),
                 str_repeat('{a}', 11),
                 str_repeat('{d}', 2),
-
             );
         }
 
