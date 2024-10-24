@@ -1,7 +1,6 @@
 {
   "name": "xefi/faker-php-fr-fr",
   "type": "library",
-  "version": "1.0.0",
   "description": "Faker extension to include fr_FR locale",
   "keywords": [
     "faker",
