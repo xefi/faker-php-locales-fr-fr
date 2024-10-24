@@ -14,6 +14,6 @@ class TestCase extends \PHPUnit\Framework\TestCase
 
         (new \Xefi\Faker\FrFr\FakerFrFrServiceProvider())->boot();
 
-        $this->faker = (new Container(false))->locale('fr-FR');
+        $this->faker = (new Container(false))->locale('fr_FR');
     }
 }

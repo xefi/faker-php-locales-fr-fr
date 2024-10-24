@@ -8,7 +8,7 @@ class ColorsExtension extends BaseColorsExtension
 {
     public function getLocale(): string|null
     {
-        return 'fr-FR';
+        return 'fr_FR';
     }
 
     protected array $safeColorNames = [

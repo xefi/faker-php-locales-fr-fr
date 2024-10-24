@@ -8,7 +8,7 @@ class FinancialExtension extends BaseFinancialExtension
 {
     public function getLocale(): string|null
     {
-        return 'fr-FR';
+        return 'fr_FR';
     }
 
     public function iban(string $countryCode = null, string $format = null): string

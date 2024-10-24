@@ -8,7 +8,7 @@ class PersonExtension extends BasePersonExtension
 {
     public function getLocale(): string|null
     {
-        return 'fr-FR';
+        return 'fr_FR';
     }
 
     protected $firstNameMale = [
