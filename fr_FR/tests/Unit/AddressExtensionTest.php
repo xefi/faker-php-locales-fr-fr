@@ -1,9 +1,8 @@
 <?php
 
+namespace Xefi\Faker\FrFr\Tests\Unit;
 
-use Xefi\Faker\Container\Container;
-use Xefi\Faker\Faker;
-use Xefi\Faker\FrFr\Tests\Unit\TestCase;
+use ReflectionClass;
 
 final class AddressExtensionTest extends TestCase
 {
@@ -21,11 +20,9 @@ final class AddressExtensionTest extends TestCase
 
     public function testRegion(): void
     {
-        $faker = new Container(false);
-
         $results = [];
         for ($i = 0; $i < count($this->regions); $i++) {
-            $results[] = $faker->unique()->region();
+            $results[] = $this->faker->unique()->region();
         }
 
         $this->assertEqualsCanonicalizing(
@@ -36,11 +33,9 @@ final class AddressExtensionTest extends TestCase
 
     public function testDepartment(): void
     {
-        $faker = new Container(false);
-
         $results = [];
         for ($i = 0; $i < count($this->departments); $i++) {
-            $results[] = $faker->unique()->department();
+            $results[] = $this->faker->unique()->department();
         }
 
         $this->assertEquals(
