@@ -7,8 +7,6 @@ use Xefi\Faker\Extensions\Traits\HasLocale;
 
 class FinancialExtension extends BaseFinancialExtension
 {
-    use HasLocale;
-
     public function getLocale(): string|null
     {
         return 'fr-FR';
@@ -18,6 +16,15 @@ class FinancialExtension extends BaseFinancialExtension
     {
         if ($countryCode === null) {
             $countryCode = 'FR';
+        }
+
+        if ($format === null) {
+            $format = sprintf('%s%s%s',
+                str_repeat('{d}', 10)  ,
+                str_repeat('{a}', 11),
+                str_repeat('{d}', 2),
+
+            );
         }
 
         return parent::iban($countryCode, $format);

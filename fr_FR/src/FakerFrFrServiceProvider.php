@@ -3,6 +3,7 @@
 namespace Xefi\Faker\FrFr;
 
 use Xefi\Faker\FrFr\Extensions\AddressExtension;
+use Xefi\Faker\FrFr\Extensions\ColorsExtension;
 use Xefi\Faker\FrFr\Extensions\CompanyExtension;
 use Xefi\Faker\FrFr\Extensions\FinancialExtension;
 use Xefi\Faker\FrFr\Extensions\PersonExtension;
@@ -17,6 +18,7 @@ class FakerFrFrServiceProvider extends Provider
             CompanyExtension::class,
             FinancialExtension::class,
             PersonExtension::class,
+            ColorsExtension::class
         ]);
     }
 }

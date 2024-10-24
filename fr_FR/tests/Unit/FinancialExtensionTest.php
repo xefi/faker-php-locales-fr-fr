@@ -10,7 +10,7 @@ final class FinancialExtensionTest extends TestCase
     {
         $iban = $this->faker->iban();
 
-        $this->assertEquals(28, strlen($iban));
+        $this->assertEquals(27, strlen($iban));
         $this->assertStringStartsWith('FR', $iban);
         $this->assertTrue(Iban::isValid($iban));
     }

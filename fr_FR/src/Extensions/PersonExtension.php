@@ -7,8 +7,6 @@ use Xefi\Faker\Extensions\Traits\HasLocale;
 
 class PersonExtension extends BasePersonExtension
 {
-    use HasLocale;
-
     public function getLocale(): string|null
     {
         return 'fr-FR';
