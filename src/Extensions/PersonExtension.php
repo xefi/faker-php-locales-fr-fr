@@ -45,7 +45,7 @@ class PersonExtension extends BasePersonExtension
 
     protected $titleFemale = ['Mme.', 'Mlle', 'Dr.', 'Pr.', 'Me.'];
 
-    public function nir(string $gender = null, bool $formatted = false): string
+    public function nir(?string $gender = null, bool $formatted = false): string
     {
         // Gender
         if ($gender === 'M') {

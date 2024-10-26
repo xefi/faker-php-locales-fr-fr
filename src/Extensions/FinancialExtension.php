@@ -11,7 +11,7 @@ class FinancialExtension extends BaseFinancialExtension
         return 'fr_FR';
     }
 
-    public function iban(string $countryCode = null, string $format = null): string
+    public function iban(?string $countryCode = null, ?string $format = null): string
     {
         if ($countryCode === null) {
             $countryCode = 'FR';
