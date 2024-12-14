@@ -30,9 +30,29 @@ class AddressExtension extends Extension
     ];
 
     protected $regions = [
-        'Auvergne-Rhône-Alpes', 'Bourgogne-Franche-Comté', 'Bretagne', 'Centre-Val de Loire', 'Corse', 'Grand Est', 'Hauts-de-France',
-        'Île-de-France', 'Normandie', 'Nouvelle-Aquitaine', 'Occitanie', 'Pays de la Loire', "Provence-Alpes-Côte d'Azur",
-        'Guadeloupe', 'Martinique', 'Guyane', 'La Réunion', 'Mayotte',
+        'Auvergne-Rhône-Alpes', 'Bourgogne-Franche-Comté', 'Bretagne', 'Centre-Val de Loire', 'Corse', 'Grand Est',
+        'Hauts-de-France', 'Île-de-France', 'Normandie', 'Nouvelle-Aquitaine', 'Occitanie', 'Pays de la Loire',
+        "Provence-Alpes-Côte d'Azur", 'Guadeloupe', 'Martinique', 'Guyane', 'La Réunion', 'Mayotte',
+        'Saint-Pierre-et-Miquelon', 'Wallis-et-Futuna', 'Polynésie française', 'Nouvelle-Calédonie'
+    ];
+
+    protected $cities = [
+        'Paris', 'Marseille', 'Lyon', 'Toulouse', 'Nice', 'Nantes', 'Montpellier', 'Strasbourg', 'Bordeaux', 'Lille',
+        'Rennes', 'Reims', 'Le Havre', 'Saint-Étienne', 'Toulon', 'Grenoble', 'Dijon', 'Angers', 'Nîmes', 'Villeurbanne',
+        'Clermont-Ferrand', 'Aix-en-Provence', 'Brest', 'Limoges', 'Tours', 'Amiens', 'Perpignan', 'Metz', 'Besançon',
+        'Orléans', 'Rouen', 'Caen', 'Mulhouse', 'Nancy', 'Annecy', 'Pau', 'La Rochelle', 'Saint-Denis', 'Bayonne',
+        'Chambéry', 'Quimper', 'Colmar', 'Ajaccio', 'Versailles', 'Valence', 'Poitiers', 'Blois'
+    ];
+
+    protected $streetTypes = ['Rue', 'Avenue', 'Boulevard', 'Chemin', 'Impasse', 'Place', 'Quai', 'Allée', 'Voie', 'Cours'];
+
+    protected $streetNames = [
+        'Victor Hugo', 'Jean Jaurès', 'de la Paix', 'des Lilas', 'du Chêne', "de l'Église", 'de la République',
+        'de Gaulle', 'Molière', 'Voltaire', 'Pasteur', 'Camille Claudel', 'des Fleurs', 'des Écoles', 'des Acacias',
+        'du Général Leclerc', 'des Champs', 'de la Liberté', 'de la Fontaine', 'Saint-Martin', 'Jean Moulin',
+        'Jules Ferry', 'Louis Pasteur', 'Albert Camus', 'André Malraux', 'de la Gare', 'des Cerisiers', 'des Rosiers',
+        'de la Forêt', 'des Peupliers', 'du Château', 'des Sources', 'de la Plage', 'des Prés', 'des Vignes',
+        'des Marronniers', 'du Parc', 'des Horizons', 'du Stade', 'de Bellevue', 'du Moulin', 'de la Tuilerie'
     ];
 
     public function region(): string
@@ -43,5 +63,58 @@ class AddressExtension extends Extension
     public function department(): array
     {
         return $this->pickArrayRandomElement($this->departments);
+    }
+
+    public function city(): string
+    {
+        return $this->pickArrayRandomElement($this->cities);
+    }
+
+    public function postcode(): string
+    {
+        $randomDigits = 0;
+        $department = array_keys($this->department())[0];
+
+        for ($i = strlen($department); $i < 5; $i++) {
+            $randomDigits .= $this->randomizer->getInt(1, 9);
+        }
+
+        return sprintf('%s%d', $department, $randomDigits);
+    }
+
+    public function streetNumber(): string
+    {
+        $streetNumber = $this->randomizer->getInt(1, 2000);
+        if ($this->randomizer->getInt(0, 1)) {
+            $streetNumber .= chr($this->randomizer->getInt(65, 69)); // A to E
+        }
+
+        return $streetNumber;
+    }
+
+    public function streetName(): string
+    {
+        $streetType = $this->pickArrayRandomElement($this->streetTypes);
+        $name = $this->pickArrayRandomElement($this->streetNames);
+
+        return sprintf('%s %s', $streetType, $name);
+    }
+
+    public function streetAddress(): string
+    {
+        $streetNumber = $this->streetNumber();
+        $streetName = $this->streetName();
+
+        return sprintf('%s %s', $streetNumber, $streetName);
+    }
+
+    public function address(): string
+    {
+        $streetAddress = $this->streetAddress();
+        $postcode = $this->postcode();
+        $city = $this->city();
+        $department = array_values($this->department())[0];
+
+        return sprintf('%s, %s %s (%s)', $streetAddress, $postcode, $city, $department);
     }
 }
