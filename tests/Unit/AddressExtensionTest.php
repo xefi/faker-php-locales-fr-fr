@@ -83,11 +83,11 @@ final class AddressExtensionTest extends TestCase
         }
     }
 
-    public function testStreetNumber(): void
+    public function testHouseNumber(): void
     {
         $results = [];
         for ($i = 0; $i < 100; $i++) {
-            $results[] = $this->faker->unique()->streetNumber();
+            $results[] = $this->faker->unique()->houseNumber();
         }
 
         foreach ($results as $result) {
@@ -122,24 +122,24 @@ final class AddressExtensionTest extends TestCase
         }
     }
 
-    public function testAddress(): void
+    public function testFullAddress(): void
     {
 
         $results = [];
         for ($i = 0; $i < 100; $i++) {
-            $results[] = $this->faker->unique()->address();
+            $results[] = $this->faker->unique()->fullAddress();
         }
 
         foreach ($results as $result) {
             $this->assertMatchesRegularExpression('/^\d{1,4}[a-zA-Z]? [\w\s\-\'âéèêÂÉÈÊ]+, \d[a-zA-Z\d]\d{3} [\w\s\-\'ÉÈçéèî]+ \([\w\s\-\'éèô]+\)$/', $result);
 
             [$streetAddressPart, $postCodeCityAndDepartmentPart] = explode(', ', $result);
-            [$streetNumber, $streetType, $streetName] = explode(' ', $streetAddressPart, 3);
+            [$houseNumber, $streetType, $streetName] = explode(' ', $streetAddressPart, 3);
             [$postCode, $cityAndDepartmentPart] = explode(' ', $postCodeCityAndDepartmentPart, 2);
             [$city, $departmentPart] = explode(' (', $cityAndDepartmentPart);
             $department = trim($departmentPart, ')');
 
-            $this->assertMatchesRegularExpression('/^\d{1,4}[a-zA-Z]?$/', $streetNumber);
+            $this->assertMatchesRegularExpression('/^\d{1,4}[a-zA-Z]?$/', $houseNumber);
             $this->assertContains($streetType, $this->streetTypes);
             $this->assertContains($streetName, $this->streetNames);
             $this->assertMatchesRegularExpression('/^\d[a-zA-Z\d]\d{3}$/', $postCode);

@@ -82,14 +82,14 @@ class AddressExtension extends Extension
         return sprintf('%s%d', $department, $randomDigits);
     }
 
-    public function streetNumber(): string
+    public function houseNumber(): string
     {
-        $streetNumber = $this->randomizer->getInt(1, 2000);
+        $houseNumber = $this->randomizer->getInt(1, 2000);
         if ($this->randomizer->getInt(0, 1)) {
-            $streetNumber .= chr($this->randomizer->getInt(65, 69)); // A to E
+            $houseNumber .= chr($this->randomizer->getInt(65, 69)); // A to E
         }
 
-        return $streetNumber;
+        return $houseNumber;
     }
 
     public function streetName(): string
@@ -102,13 +102,13 @@ class AddressExtension extends Extension
 
     public function streetAddress(): string
     {
-        $streetNumber = $this->streetNumber();
+        $houseNumber = $this->houseNumber();
         $streetName = $this->streetName();
 
-        return sprintf('%s %s', $streetNumber, $streetName);
+        return sprintf('%s %s', $houseNumber, $streetName);
     }
 
-    public function address(): string
+    public function fullAddress(): string
     {
         $streetAddress = $this->streetAddress();
         $postcode = $this->postcode();
