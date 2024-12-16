@@ -124,7 +124,6 @@ final class AddressExtensionTest extends TestCase
 
     public function testFullAddress(): void
     {
-
         $results = [];
         for ($i = 0; $i < 100; $i++) {
             $results[] = $this->faker->unique()->fullAddress();

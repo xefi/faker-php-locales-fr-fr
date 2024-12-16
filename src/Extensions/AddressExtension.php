@@ -33,7 +33,7 @@ class AddressExtension extends Extension
         'Auvergne-Rhône-Alpes', 'Bourgogne-Franche-Comté', 'Bretagne', 'Centre-Val de Loire', 'Corse', 'Grand Est',
         'Hauts-de-France', 'Île-de-France', 'Normandie', 'Nouvelle-Aquitaine', 'Occitanie', 'Pays de la Loire',
         "Provence-Alpes-Côte d'Azur", 'Guadeloupe', 'Martinique', 'Guyane', 'La Réunion', 'Mayotte',
-        'Saint-Pierre-et-Miquelon', 'Wallis-et-Futuna', 'Polynésie française', 'Nouvelle-Calédonie'
+        'Saint-Pierre-et-Miquelon', 'Wallis-et-Futuna', 'Polynésie française', 'Nouvelle-Calédonie',
     ];
 
     protected $cities = [
@@ -41,7 +41,7 @@ class AddressExtension extends Extension
         'Rennes', 'Reims', 'Le Havre', 'Saint-Étienne', 'Toulon', 'Grenoble', 'Dijon', 'Angers', 'Nîmes', 'Villeurbanne',
         'Clermont-Ferrand', 'Aix-en-Provence', 'Brest', 'Limoges', 'Tours', 'Amiens', 'Perpignan', 'Metz', 'Besançon',
         'Orléans', 'Rouen', 'Caen', 'Mulhouse', 'Nancy', 'Annecy', 'Pau', 'La Rochelle', 'Saint-Denis', 'Bayonne',
-        'Chambéry', 'Quimper', 'Colmar', 'Ajaccio', 'Versailles', 'Valence', 'Poitiers', 'Blois'
+        'Chambéry', 'Quimper', 'Colmar', 'Ajaccio', 'Versailles', 'Valence', 'Poitiers', 'Blois',
     ];
 
     protected $streetTypes = ['Rue', 'Avenue', 'Boulevard', 'Chemin', 'Impasse', 'Place', 'Quai', 'Allée', 'Voie', 'Cours'];
@@ -52,7 +52,7 @@ class AddressExtension extends Extension
         'du Général Leclerc', 'des Champs', 'de la Liberté', 'de la Fontaine', 'Saint-Martin', 'Jean Moulin',
         'Jules Ferry', 'Louis Pasteur', 'Albert Camus', 'André Malraux', 'de la Gare', 'des Cerisiers', 'des Rosiers',
         'de la Forêt', 'des Peupliers', 'du Château', 'des Sources', 'de la Plage', 'des Prés', 'des Vignes',
-        'des Marronniers', 'du Parc', 'des Horizons', 'du Stade', 'de Bellevue', 'du Moulin', 'de la Tuilerie'
+        'des Marronniers', 'du Parc', 'des Horizons', 'du Stade', 'de Bellevue', 'du Moulin', 'de la Tuilerie',
     ];
 
     public function region(): string

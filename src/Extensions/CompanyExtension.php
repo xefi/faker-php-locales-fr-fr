@@ -8,16 +8,16 @@ use Xefi\Faker\Extensions\Extension;
 class CompanyExtension extends Extension
 {
     private array $companies = [
-        "Dupont & Fils SARL", "Les Horizons Innovants", "Châteauvert Technologies",
-        "Alliance Lumière", "Rivière & Associés", "ÉtoileBleue Industries",
-        "Prestige Montmartre", "Lacroix Ingénierie", "Forge d'Argent SAS",
-        "NouvelleVague Solutions", "Bourgogne Logistique", "Clairmont Médical",
-        "Verger & Compagnie", "HauteMontagne Énergie", "Touraine Systems",
-        "Delacroix Automation", "Alpille Informatique", "Phénix Industrie",
-        "Soleil Levant Ventures", "Ciel d'Azur Pharma", "Pavillon Blanc SA",
-        "Mistral Digital", "Marseille Nautique", "Boisclair Constructions",
-        "Rouge et Or Design", "VignobleTech SAS", "Lorraine Groupe",
-        "Atlantique Solutions", "LaForge Métallurgie", "Aurélien & Co."
+        'Dupont & Fils SARL', 'Les Horizons Innovants', 'Châteauvert Technologies',
+        'Alliance Lumière', 'Rivière & Associés', 'ÉtoileBleue Industries',
+        'Prestige Montmartre', 'Lacroix Ingénierie', "Forge d'Argent SAS",
+        'NouvelleVague Solutions', 'Bourgogne Logistique', 'Clairmont Médical',
+        'Verger & Compagnie', 'HauteMontagne Énergie', 'Touraine Systems',
+        'Delacroix Automation', 'Alpille Informatique', 'Phénix Industrie',
+        'Soleil Levant Ventures', "Ciel d'Azur Pharma", 'Pavillon Blanc SA',
+        'Mistral Digital', 'Marseille Nautique', 'Boisclair Constructions',
+        'Rouge et Or Design', 'VignobleTech SAS', 'Lorraine Groupe',
+        'Atlantique Solutions', 'LaForge Métallurgie', 'Aurélien & Co.',
     ];
 
     public function siren(): string
