@@ -1,8 +1,12 @@
 <?php
 
-use ReflectionClass;
+namespace Xefi\Faker\FrFr\Tests\Unit;
 
-final class ColorsExtensionTest extends \Xefi\Faker\FrFr\Tests\Unit\TestCase
+use Random\Randomizer;
+use ReflectionClass;
+use Xefi\Faker\FrFr\Extensions\ColorsExtension;
+
+final class ColorsExtensionTest extends TestCase
 {
     protected array $safeColorNames = [];
     protected array $colorNames = [];
@@ -11,7 +15,7 @@ final class ColorsExtensionTest extends \Xefi\Faker\FrFr\Tests\Unit\TestCase
     {
         parent::setUp();
 
-        $colorsExtension = new \Xefi\Faker\FrFr\Extensions\ColorsExtension(new \Random\Randomizer());
+        $colorsExtension = new ColorsExtension(new Randomizer());
         $this->safeColorNames = (new ReflectionClass($colorsExtension))->getProperty('safeColorNames')->getValue($colorsExtension);
         $this->colorNames = (new ReflectionClass($colorsExtension))->getProperty('colorNames')->getValue($colorsExtension);
     }

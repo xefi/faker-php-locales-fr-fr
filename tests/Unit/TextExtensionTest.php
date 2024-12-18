@@ -1,8 +1,12 @@
 <?php
 
-use ReflectionClass;
+namespace Xefi\Faker\FrFr\Tests\Unit;
 
-final class TextExtensionTest extends \Xefi\Faker\FrFr\Tests\Unit\TestCase
+use Random\Randomizer;
+use ReflectionClass;
+use Xefi\Faker\FrFr\Extensions\TextExtension;
+
+final class TextExtensionTest extends TestCase
 {
     protected array $paragraphs = [];
 
@@ -10,7 +14,7 @@ final class TextExtensionTest extends \Xefi\Faker\FrFr\Tests\Unit\TestCase
     {
         parent::setUp();
 
-        $textExtension = new \Xefi\Faker\FrFr\Extensions\TextExtension(new \Random\Randomizer());
+        $textExtension = new TextExtension(new Randomizer());
         $this->paragraphs = (new ReflectionClass($textExtension))->getProperty('paragraphs')->getValue($textExtension);
     }
 
