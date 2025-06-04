@@ -21,11 +21,9 @@ final class CompanyExtensionTest extends TestCase
 
     public function testSiren()
     {
-        $faker = new Container(false);
-
         $results = [];
         for ($i = 0; $i < 100; $i++) {
-            $results[] = $faker->siren();
+            $results[] = $this->faker->siren();
         }
 
         foreach ($results as $result) {
@@ -36,11 +34,9 @@ final class CompanyExtensionTest extends TestCase
 
     public function testSiret()
     {
-        $faker = new Container(false);
-
         $results = [];
         for ($i = 0; $i < 100; $i++) {
-            $results[] = $faker->siret();
+            $results[] = $this->faker->siret();
         }
 
         foreach ($results as $result) {
