@@ -4,7 +4,6 @@ namespace Xefi\Faker\FrFr\Tests\Unit;
 
 use Random\Randomizer;
 use Xefi\Faker\Calculators\Luhn;
-use Xefi\Faker\Container\Container;
 use Xefi\Faker\FrFr\Extensions\CompanyExtension;
 
 final class CompanyExtensionTest extends TestCase
