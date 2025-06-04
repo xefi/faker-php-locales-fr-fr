@@ -6,7 +6,7 @@ use Xefi\Faker\Extensions\TextExtension as BaseTextExtension;
 
 class TextExtension extends BaseTextExtension
 {
-    public function getLocale(): string|null
+    public function getLocale(): ?string
     {
         return 'fr_FR';
     }

@@ -6,7 +6,7 @@ use Xefi\Faker\Extensions\Extension;
 
 class AddressExtension extends Extension
 {
-    public function getLocale(): string|null
+    public function getLocale(): ?string
     {
         return 'fr_FR';
     }

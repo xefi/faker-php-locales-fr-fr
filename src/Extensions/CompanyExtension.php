@@ -7,7 +7,7 @@ use Xefi\Faker\Extensions\Extension;
 
 class CompanyExtension extends Extension
 {
-    public function getLocale(): string|null
+    public function getLocale(): ?string
     {
         return 'fr_FR';
     }
