@@ -6,7 +6,7 @@ use Xefi\Faker\Extensions\FinancialExtension as BaseFinancialExtension;
 
 class FinancialExtension extends BaseFinancialExtension
 {
-    public function getLocale(): string|null
+    public function getLocale(): ?string
     {
         return 'fr_FR';
     }
