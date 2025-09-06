@@ -27,7 +27,9 @@ class CompanyExtension extends Extension
 
     public function siren(): string
     {
-        return $this->randomizer->getBytesFromString(implode(range(1, 9)), 1).$this->randomizer->getBytesFromString(implode(range(0, 9)), 8);
+        $siren = $this->randomizer->getBytesFromString(implode(range(1, 9)), 1).$this->randomizer->getBytesFromString(implode(range(0, 9)), 7);
+
+        return (string) Luhn::create((int) $siren);
     }
 
     public function siret(): string
