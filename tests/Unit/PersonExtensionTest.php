@@ -2,6 +2,7 @@
 
 namespace Xefi\Faker\FrFr\Tests\Unit;
 
+use Random\Randomizer;
 use ReflectionClass;
 use Xefi\Faker\Extensions\PersonExtension;
 
@@ -17,7 +18,7 @@ final class PersonExtensionTest extends TestCase
     {
         parent::setUp();
 
-        $personExtension = new \Xefi\Faker\FrFr\Extensions\PersonExtension(new \Random\Randomizer());
+        $personExtension = new \Xefi\Faker\FrFr\Extensions\PersonExtension(new Randomizer());
         $this->firstNameMale = (new ReflectionClass($personExtension))->getProperty('firstNameMale')->getValue($personExtension);
         $this->firstNameFemale = (new ReflectionClass($personExtension))->getProperty('firstNameFemale')->getValue($personExtension);
         $this->lastName = (new ReflectionClass($personExtension))->getProperty('lastName')->getValue($personExtension);
