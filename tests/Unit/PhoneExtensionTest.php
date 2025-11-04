@@ -1,40 +1,66 @@
 <?php
 
-namespace Unit;
+namespace Xefi\Faker\FrFr\Tests\Unit;
 
 use Random\Randomizer;
+use ReflectionClass;
 use Xefi\Faker\FrFr\Extensions\PhoneExtension;
-use Xefi\Faker\FrFr\Tests\Unit\TestCase;
 
 final class PhoneExtensionTest extends TestCase
 {
     protected array $formats = [];
 
-    protected function setUp(): void
+    public function testPhoneNumber(): void
     {
-        parent::setUp();
+        for ($i = 0; $i < 50; ++$i) {
+            $phoneNumber = $this->faker->phoneNumber();
 
-        $phoneExtension = new PhoneExtension(new Randomizer());
-        $this->formats = (new \ReflectionClass($phoneExtension))->getProperty('formats')->getValue($phoneExtension);
+            $this->assertMatchesRegularExpression('/^\d{10}$/', $phoneNumber);
+        }
     }
 
-    public function testPhoneNumberReturnsString(): void
+    public function testIndicatoredPhoneNumber(): void
     {
-        $number = $this->faker->phoneNumber();
+        for ($i = 0; $i < 50; ++$i) {
+            $phoneNumber = $this->faker->indicatoredPhoneNumber();
 
-        $this->assertIsString($number);
-        $this->assertNotEmpty($number);
+            $this->assertMatchesRegularExpression('/^\+33\d{9}$/', $phoneNumber);
+        }
     }
 
-    public function testPhoneNumberFormat(): void
+    public function testCellPhoneNumber(): void
     {
-        for ($i = 0; $i < 100; $i++) {
-            $number = $this->faker->phoneNumber();
+        for ($i = 0; $i < 50; ++$i) {
+            $phoneNumber = $this->faker->cellPhoneNumber();
 
-            $this->assertMatchesRegularExpression(
-                '/^(\+33|0)\d{9}$/',
-                $number
-            );
+            $this->assertMatchesRegularExpression('/^0[67]\d{8}$/', $phoneNumber);
+        }
+    }
+
+    public function testIndicatoredCellPhoneNumber(): void
+    {
+        for ($i = 0; $i < 50; ++$i) {
+            $phoneNumber = $this->faker->indicatoredCellPhoneNumber();
+
+            $this->assertMatchesRegularExpression('/^\+33[67]\d{8}$/', $phoneNumber);
+        }
+    }
+
+    public function testLandlinePhoneNumber(): void
+    {
+        for ($i = 0; $i < 50; ++$i) {
+            $phoneNumber = $this->faker->landlinePhoneNumber();
+
+            $this->assertMatchesRegularExpression('/^0[1234589]\d{8}$/', $phoneNumber);
+        }
+    }
+
+    public function testIndicatoredLandlinePhoneNumber(): void
+    {
+        for ($i = 0; $i < 50; ++$i) {
+            $phoneNumber = $this->faker->indicatoredLandlinePhoneNumber();
+
+            $this->assertMatchesRegularExpression('/^\+33[1234589]\d{8}$/', $phoneNumber);
         }
     }
 }
