@@ -28,6 +28,7 @@ final class CompanyExtensionTest extends TestCase
         foreach ($results as $result) {
             $this->assertIsNumeric($result);
             $this->assertEquals(9, strlen($result));
+            $this->assertTrue(Luhn::isValid($result));
         }
     }
 
